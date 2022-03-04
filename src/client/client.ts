@@ -8,13 +8,14 @@ class Client {
             sessionStorage.setItem("socket_id", message);
             if(this.user_id)
             this.socket.emit('updateUser', {socket_id:message, id: this.user_id})
-        })
-        this.socket.emit("userList", () => {
-            this.socket.on("onlineList", (data: any) => {
-                console.log(data);
+
+            this.socket.emit("userList", () => {
+                this.socket.on("onlineList", (data: any) => {
+                    console.log(data);
+                })
             })
+          
         })
-      
         // this.socket.on('random', function (message: any) {
         //     console.log(message)
         //     document.body.innerHTML += 'Winning number is ' + message + '<br/>'
@@ -31,6 +32,7 @@ class Client {
         // })
     }
     
+
 }
 
 const client = new Client()

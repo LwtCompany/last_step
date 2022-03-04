@@ -41,26 +41,10 @@ class App {
             socket.emit('newUser', socket.id)
             socketController(socket);
             
-            // socket.broadcast.emit(
-            //     'message',
-            //     'Everybody, say hello to ' + socket.id
-            // )
 
-
-            // socket.on('disconnect',  () => {
-          
-            //     socket.emit('deleteUser', socket.id);
-            //     console.log("Birinchi etap :", socket.id)
-            //     // socket.broadcast.emit(
-            //     //     'everyOne',
-            //     //     'This user disconnected ' + socket.id
-            //     // )
-            // })
         })
 
-        // setInterval(() => {
-        //     this.io.emit('random', Math.floor(Math.random() * 10))
-        // }, 1000)
+     
     }
 
     public Start() {

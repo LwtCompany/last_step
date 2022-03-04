@@ -11,8 +11,7 @@ export default  function(socket_io){
 
     socket_io.on("userList", async () => {
        const userList = await onlineList();
-    //    console.log(userList)
-        // socket_io.emit("onlineList", (userList));
+        socket_io.emit("onlineList", (userList));
     })
 }
 
@@ -53,6 +52,6 @@ async function onlineList() {
             }
         }
     });
-    console.log(users_list)
-    // return users_list;
+
+    return users_list;
 }
